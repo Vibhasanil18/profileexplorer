@@ -1,0 +1,80 @@
+/* Modal Overlay - Dark Background */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+/* Modal Content */
+.modal-content {
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  width: 90%;
+  max-width: 600px;
+  position: relative;
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+/* Close Button */
+.close-btn {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  background: red;
+  color: white;
+  border: none;
+  font-size: 18px;
+  cursor: pointer;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease-in-out;
+}
+
+.close-btn:hover {
+  background: darkred;
+}
+
+/* Loading & Error Messages */
+.loading, .error {
+  font-size: 1rem;
+  text-align: center;
+  color: #d9534f;
+}
+
+/* Map Responsiveness */
+@media (max-width: 768px) {
+  .modal-content {
+    width: 95%;
+    padding: 15px;
+  }
+
+  .close-btn {
+    top: 5px;
+    right: 10px;
+  }
+}
+
+/* Fade-in Animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
